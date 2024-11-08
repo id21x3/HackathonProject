@@ -1,0 +1,313 @@
+
+body, html {
+    height: 100%;
+    overflow-y: auto;
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.family-finance-app {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+}
+
+.budget-overview {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.budget-overview h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.progress-bar-container {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+    background-color: #ddd;
+}
+
+.progress-bar-segment {
+    height: 100%;
+}
+
+.categories {
+    font-size: 0.9rem;
+}
+
+.family-members h3, .family-goals h3 {
+    margin-top: 0;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    background-color: #e0e7ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.member-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.member-info h4 {
+    margin: 0;
+}
+
+.action-button {
+    margin-left: auto;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.family-goals .goal-card {
+    background-color: #e0e7ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goal-progress-bar {
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.goal-progress {
+    height: 100%;
+}
+
+.add-goal-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #e0e7ff;
+    border-radius: 10px;
+}
+
+.footer-icon {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .family-finance-app {
+        min-height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.progress-bar-container {
+    display: flex;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+    background-color: #ddd;
+}
+
+.progress-bar-segment {
+    height: 100%;
+}
+
+.progress-bar-segment.groceries {
+    background-color: #4a90e2;
+    width: 40%;
+}
+
+.progress-bar-segment.entertainment {
+    background-color: #f06292;
+    width: 20%;
+}
+
+.progress-bar-segment.utilities {
+    background-color: #ffb74d; /* Оранжевый для коммунальных услуг */
+    width: 40%; /* Примерное значение процента */
+}
+.family-members {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    background-color: #e0e7ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: all 1s ease; /* Плавная анимация для высоты и расположения элементов */
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 80px; /* Высота карточки в закрытом состоянии */
+    position: relative;
+}
+
+.member-card.expanded {
+    flex-direction: column; /* Меняем расположение на вертикальное */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    max-height: 50vh; /* Увеличенная высота карточки */
+    padding: 20px;
+}
+
+.member-initials {
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    transition: font-size 1s ease; /* Плавное увеличение размера */
+}
+
+.member-card.expanded .member-initials {
+    font-size: 2rem; /* Увеличенный размер инициалов при раскрытии */
+    margin-bottom: 10px;
+}
+
+.member-info {
+    text-align: center;
+}
+
+.member-info h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.member-role {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Центрирование дополнительной информации */
+.additional-info {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.additional-info p {
+    margin: 5px 0;
+}
+
+/* Кнопка Add Money */
+.add-money-button {
+    display: block;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* Стили для модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h4 {
+    margin-bottom: 15px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.confirm-button,
+.close-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.confirm-button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.close-button {
+    background-color: #f44336;
+    color: white;
+}

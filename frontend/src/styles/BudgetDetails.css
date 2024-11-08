@@ -1,0 +1,356 @@
+.spending-history {
+    margin-top: 20px;
+}
+
+.filter-dropdown {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.transaction-list {
+    margin-top: 10px;
+}
+
+.transaction {
+        display: flex;
+        align-items: center;
+        background-color: #e0e7ff;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+
+}
+
+.transaction-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.transaction-date {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.transaction-amount {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.transaction-amount.negative {
+    color: #f44336; /* Красный цвет для отрицательных значений */
+}
+
+.transaction-amount.positive {
+    color: #4caf50; /* Зеленый цвет для положительных значений */
+}
+.spending-history {
+    margin-top: 20px;
+}
+
+.period-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.period-button {
+    padding: 5px 10px;
+    background-color: #f0f2f5;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.period-button.active {
+    background-color: #4a90e2;
+    color: #fff;
+    border: 1px solid #4a90e2;
+}
+
+.period-button:hover {
+    background-color: #e0e7ff;
+}
+
+.transaction-list {
+    margin-top: 10px;
+}
+
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.transaction-date {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.transaction-amount {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.transaction-amount.negative {
+    color: #f44336;
+}
+
+.transaction-amount.positive {
+    color: #4caf50;
+}
+.period-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.period-button {
+    flex: 1; /* Кнопки занимают равное пространство */
+    padding: 10px 0; /* Дополнительное вертикальное пространство для кнопок */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    margin-left: auto;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.period-button.active {
+    background-color: #fff;
+    color:  #4a90e2;
+    border: 1px solid #4a90e2;
+}
+
+.period-button:hover {
+    background-color: #e0e7ff;
+}
+.spending-statistics {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.spending-statistics h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+.header {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f7ff; /* Светлый фон */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.back-icon {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.header h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 10px;
+}
+
+.edit-button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.edit-button:hover {
+    background-color: #3b78d1; /* Темнее при наведении */
+}
+.budget-summary {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.budget-info {
+    margin-bottom: 10px;
+}
+
+.budget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.budget-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0 10px; /* Отступ для расстояния между текстом и кнопкой */
+}
+
+.edit-button {
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: auto;
+    background-color: #3f51b5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.edit-button:hover {
+    background-color: #3b78d1;
+}
+
+.budget-input {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    text-align: right;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4a90e2;
+}
+
+.spending-statistics {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.spending-statistics h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.spending-chart {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

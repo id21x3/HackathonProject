@@ -1,0 +1,59 @@
+.button-like {
+    display: block;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тень для объема */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button-like:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Увеличенная тень при наведении */
+    transform: translateY(-2px); /* Легкое поднятие при наведении */
+}
+
+.budget-overview h2 {
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.budget-overview p {
+    font-size: 1rem;
+    margin: 5px 0 15px;
+    color: #666;
+}
+
+.progress-bar-container {
+    display: flex;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 10px 0;
+    background-color: #ddd;
+}
+
+.progress-bar-segment {
+    height: 100%;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.category-icon {
+    font-size: 1rem;
+}
