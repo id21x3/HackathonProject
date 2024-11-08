@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4ed2cf16-3de4-4149-bb31-b808b4795d06" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +40,7 @@
     "Docker.backend/compose.yaml.postgres: Compose Deployment.executor": "Run",
     "Docker.backend/compose.yaml: Compose Deployment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "test",
+    "git-widget-placeholder": "entitys",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/oleksandr/Documents/HackathonProject/backend",
