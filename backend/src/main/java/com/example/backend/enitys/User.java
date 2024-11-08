@@ -13,8 +13,8 @@ public class User {
     @Id
     @Generated
     private Long id;
-    private Long family_account_id;
-    private Boolean is_parent;
+    private Long familyAccountId;
+    private Boolean isParent;
     private String firstName;
     private String lastName;
 
