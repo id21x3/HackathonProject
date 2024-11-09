@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -9,6 +10,14 @@ client = OpenAI()
 
 app = FastAPI()
 
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Adjust this to the frontend's URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class AccountInfo(BaseModel):
     username: str
@@ -36,7 +45,6 @@ def account_prompts(accountInfo: AccountInfo):
         f"\nDuring the current month, the money was spent on: {money_spent_on(accountInfo.spent_on)}."
     )
 
-
 @app.post("/get-response")
 async def get_response(user_message: UserMessage):
     try:
@@ -52,7 +60,7 @@ async def get_response(user_message: UserMessage):
             ]
         )
 
-        response_content = completion.choices[0].message['content']
+        response_content = completion.choices[0].message.content
         return {"response": response_content}
 
     except Exception as e:
