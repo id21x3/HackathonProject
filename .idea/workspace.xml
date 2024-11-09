@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed2cf16-3de4-4149-bb31-b808b4795d06" name="Changes" comment="Dockerfile fix">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +131,7 @@
       <workItem from="1731080177831" duration="185000" />
       <workItem from="1731080460327" duration="986000" />
       <workItem from="1731109600658" duration="2396000" />
-      <workItem from="1731118565609" duration="563000" />
+      <workItem from="1731118565609" duration="1489000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile fix">
       <option name="closed" value="true" />
@@ -142,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731114784704</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dockerfile fix">
+      <option name="closed" value="true" />
+      <created>1731119164087</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731119164087</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
