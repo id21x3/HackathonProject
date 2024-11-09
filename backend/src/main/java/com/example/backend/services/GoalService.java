@@ -15,4 +15,8 @@ public class GoalService {
     public List<Goal> getGoalsByFamilyId(Long familyId) {
         return goalRepository.findByFamilyId(familyId);
     }
+
+    public Goal createGoal(Goal goal) {
+        return goalRepository.save(goal);
+    }
 }
