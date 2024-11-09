@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AIAssistantService {
 
-    private final String pythonApiUrl = "http://localhost:5000/get-response";
+    private final String pythonApiUrl = "http://fastapi:5000/get-response";
 
     public String getOpenAIResponse(String message) {
         String jsonRequest = "{\"message\": \"" + message + "\"}";

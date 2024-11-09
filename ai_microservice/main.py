@@ -33,7 +33,8 @@ async def get_response(user_message: UserMessage):
             ]
         )
 
-        response_content = completion.choices[0].message['content']
+        # Используем атрибут choices, чтобы извлечь ответ
+        response_content = completion.choices[0].message.content
         return {"response": response_content}
 
     except Exception as e:
