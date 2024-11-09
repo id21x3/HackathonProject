@@ -7,7 +7,7 @@ const NotificationModal = ({ notification, onClose }) => {
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h3>Purchase Details</h3>
+                <h1>Purchase Details</h1>
                 <p><strong>Message:</strong> {notification.message}</p>
                 <p><strong>Place:</strong> {details.place}</p>
                 <p><strong>Date:</strong> {details.date}</p>
