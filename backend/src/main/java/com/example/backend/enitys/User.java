@@ -2,9 +2,13 @@ package com.example.backend.enitys;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -17,6 +21,10 @@ public class User {
     private Boolean isParent;
     private String firstName;
     private String lastName;
+    @OneToMany(mappedBy = "user")
+    private List<Transaction> transactions;
+    @ManyToOne
+    private FamilyAccount family;
 
     public User( String firstName, String lastName ) {
         this.firstName = firstName;

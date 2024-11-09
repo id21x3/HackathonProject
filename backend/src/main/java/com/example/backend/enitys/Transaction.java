@@ -1,10 +1,9 @@
 package com.example.backend.enitys;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.type.descriptor.jdbc.JdbcTypeFamilyInformation;
 
 import java.util.Date;
 
@@ -14,21 +13,28 @@ import java.util.Date;
 public class Transaction {
     @Id
     @GeneratedValue
-    private int transactionId;
-    private int familyId;
-    private int userId;
-    private int categoryId;
+    private Long transactionId;
+    private Long familyId;
+    private Long categoryId;
     private int amount;
     private Date transactionDate;
     private String description;
     private int budgetId;
     private String transactionType;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private Budget budget;
+    @ManyToOne
+    private FamilyAccount family;
+    @OneToOne
+    private Category category;
 
     public Transaction() {
     }
 
     @Override
     public String toString() {
-        return "";
+        return description;
     }
 }
