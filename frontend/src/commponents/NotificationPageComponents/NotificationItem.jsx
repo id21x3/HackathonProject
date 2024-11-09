@@ -1,22 +1,26 @@
 import React from 'react';
 import { FaEnvelope, FaEnvelopeOpen } from 'react-icons/fa';
-import '../styles/NotificationItem.css';
+import '/src/styles/Notification/NotificationItem.css';
 
 const NotificationItem = ({ notification, onClick }) => {
-    const isRestricted = notification.type === 'restricted';
-    const isUnread = notification.status === 'unread';
+    const { message, type, status, details } = notification;
+    const isRestricted = type === 'restricted';
+    const date = new Date(details.date).toLocaleDateString();
 
     return (
         <div
-            className={`notification-item ${isRestricted ? 'restricted' : ''} ${isUnread ? 'unread' : 'read'}`}
+            className={`notification-item ${status === 'read' ? 'read' : 'unread'} ${
+                isRestricted ? 'restricted' : ''
+            }`}
             onClick={onClick}
         >
-            {isUnread ? (
-                <FaEnvelope className="icon envelope-icon" />
-            ) : (
-                <FaEnvelopeOpen className="icon envelope-icon" />
-            )}
-            <p>{notification.message}</p>
+            <div className="icon">
+                {status === 'read' ? <FaEnvelopeOpen /> : <FaEnvelope />}
+            </div>
+            <div className="message-content">
+                <p>{message}</p>
+                <p className="notification-date">{date}</p>
+            </div>
         </div>
     );
 };

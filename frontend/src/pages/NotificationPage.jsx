@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import NotificationList from '../components/NotificationList';
-import NotificationModal from '../components/NotificationModal';
-import '../styles/NotificationPage.css';
+import NotificationList from '../commponents/NotificationPageComponents/NotificationList.jsx';
+import NotificationModal from '../commponents/NotificationPageComponents/NotificationModal';
+import MessagesHeader from "../commponents/NotificationPageComponents/MessagesHeader.jsx";
+import '../styles/Notification/NotificationPage.css';
 
 const NotificationPage = () => {
     const [notifications, setNotifications] = useState([
@@ -28,7 +29,7 @@ const NotificationPage = () => {
 
     return (
         <div className="notification-page">
-            <h1>Notifications</h1>
+            <MessagesHeader />
             <NotificationList
                 notifications={notifications}
                 onNotificationClick={handleNotificationClick}

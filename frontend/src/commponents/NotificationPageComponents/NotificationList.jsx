@@ -1,5 +1,5 @@
 import React from 'react';
-import NotificationItem from './NotificationItem';
+import NotificationItem from '../NotificationPageComponents/NotificationItem.jsx';
 
 const NotificationList = ({ notifications, onNotificationClick }) => {
     return (
