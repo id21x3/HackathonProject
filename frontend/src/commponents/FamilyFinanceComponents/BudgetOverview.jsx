@@ -1,11 +1,10 @@
 import React from 'react';
 import '../../styles/BudgetOverview.css';
 import { FaShoppingCart, FaFilm, FaLightbulb } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const BudgetOverview = () => {
     const navigate = useNavigate();
-
 
     const totalBudget = 12500;
     const availableBudget = 3250;
@@ -17,10 +16,12 @@ const BudgetOverview = () => {
     ];
 
     const totalSpent = categories.reduce((sum, category) => sum + category.amount, 0);
+    const remainingBudget = totalBudget - totalSpent; // Сколько осталось после расходов
 
     const handleClick = () => {
-        navigate('/budget'); // Переход на /budget
+        navigate('/budget');
     };
+
     return (
         <section className="budget-overview button-like" onClick={handleClick}>
             <h2>${totalBudget.toLocaleString()}</h2>
@@ -32,11 +33,19 @@ const BudgetOverview = () => {
                         key={category.name}
                         className="progress-bar-segment"
                         style={{
-                            width: `${(category.amount / totalSpent) * 100}%`,
+                            width: `${(category.amount / totalBudget) * 100}%`,
                             backgroundColor: category.color,
                         }}
                     ></div>
                 ))}
+                {/* Добавим сегмент для оставшихся средств */}
+                <div
+                    className="progress-bar-segment"
+                    style={{
+                        width: `${(remainingBudget / totalBudget) * 100}%`,
+                        backgroundColor: '#ddd', // Серый цвет для неиспользованного бюджета
+                    }}
+                ></div>
             </div>
 
             <div className="categories">

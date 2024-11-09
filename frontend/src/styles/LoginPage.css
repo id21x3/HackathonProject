@@ -1,0 +1,81 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f2f5; /* Основной цвет фона */
+    color: #333; /* Цвет текста */
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #4a90e2; /* Основной цвет вашей темы */
+    margin-bottom: 20px;
+}
+
+.pin-display {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.pin-dot {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #4a90e2; /* Цвет, когда точка заполнена */
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.keypad-button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    background-color: #e0e7ff; /* Светлый цвет вашей темы */
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.keypad-button:hover {
+    background-color: #c0d3ff; /* Темный оттенок для наведения */
+}
+
+.delete-button {
+    background-color: #ff5722; /* Цвет кнопки удаления */
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #e64a19; /* Темнее при наведении */
+}
+.submit-button {
+    width: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #4a90e2; /* Цвет вашей темы */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #3b78d1; /* Цвет при наведении */
+}
