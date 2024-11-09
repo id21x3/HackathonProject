@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ed2cf16-3de4-4149-bb31-b808b4795d06" name="Changes" comment="Dockerfile fix">
+    <list default="true" id="4ed2cf16-3de4-4149-bb31-b808b4795d06" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/enitys/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/enitys/Goal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/repositories/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/repositories/TransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/services/BudgetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/services/BudgetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -30,10 +33,6 @@
     &quot;accountId&quot;: &quot;98ab149c-7275-48e8-a842-85c4c74fb478&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -42,28 +41,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.backend/compose.yaml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.backend/compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;back__test__branch&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/oleksandr/Documents/HackathonProject/backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsDialog.application.dockerMachine&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.backend/compose.yaml.postgres: Compose Deployment.executor": "Run",
+    "Docker.backend/compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "back__test__branch",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/oleksandr/Documents/HackathonProject/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsDialog.application.dockerMachine",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
@@ -104,6 +103,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.backend/compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.backend/compose.yaml.postgres: Compose Deployment" />
         <item itemvalue="Docker.backend/compose.yaml.postgres: Compose Deployment" />
         <item itemvalue="Docker.backend/compose.yaml: Compose Deployment" />
       </list>
@@ -112,8 +113,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.22855.92" />
-        <option value="bundled-python-sdk-b068d85d1acf-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.22855.92" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
       </set>
     </attachedChunks>
   </component>
@@ -133,34 +134,11 @@
       <workItem from="1731079949585" duration="84000" />
       <workItem from="1731080177831" duration="185000" />
       <workItem from="1731080460327" duration="986000" />
-      <workItem from="1731109600658" duration="2396000" />
-      <workItem from="1731118565609" duration="1489000" />
-      <workItem from="1731120442616" duration="2921000" />
+      <workItem from="1731124219077" duration="1850000" />
     </task>
-    <task id="LOCAL-00001" summary="Dockerfile fix">
-      <option name="closed" value="true" />
-      <created>1731114784704</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1731114784704</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Dockerfile fix">
-      <option name="closed" value="true" />
-      <created>1731119164087</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1731119164087</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dockerfile fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile fix" />
   </component>
 </project>
