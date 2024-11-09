@@ -25,15 +25,16 @@ def system_prompts(filename="system_prompts.txt"):
         prompts = file.read().splitlines()
     return prompts
 
-def account_prompts(accountInfo: AccountInfo):
-    return {"\nYou're communicating with " + accountInfo.username + "." 
-            "\nCurrent expenditures of the family for the month - " + accountInfo.current_budget + "€." +
-            "\nPlanned family budget for the month - " + accountInfo.planned_budget + "€." +
-            "\nDuring the current month the money was spent on: " + money_spent_on(accountInfo.spent_on) + "."
-            }
-
 def money_spent_on(spent_on: dict):
-    return ", ".join([f"{category} - {amount}" for category, amount in spent_on.items()]);
+    return ", ".join([f"{category} - {amount}" for category, amount in spent_on.items()])
+
+def account_prompts(accountInfo: AccountInfo):
+    return (
+        f"\nYou're communicating with {accountInfo.username}."
+        f"\nCurrent expenditures of the family for the month - {accountInfo.current_budget}€."
+        f"\nPlanned family budget for the month - {accountInfo.planned_budget}€."
+        f"\nDuring the current month, the money was spent on: {money_spent_on(accountInfo.spent_on)}."
+    )
 
 
 @app.post("/get-response")
