@@ -9,10 +9,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    List<Transaction> findByFamily_IdAndBudget_IdAndTransactionType(
+    List<Transaction> findByFamilyIdAndBudgetIdAndTransactionType(
             Long familyId, Long budgetId, String transactionType);
 
-    List<Transaction> findByBudget_Id(Long budgetId);
+    List<Transaction> findByBudgetId(Long budgetId);
 
     // Get transactions by date range
     @Query("SELECT t FROM Transaction t WHERE t.budget.budgetId = :budgetId " +

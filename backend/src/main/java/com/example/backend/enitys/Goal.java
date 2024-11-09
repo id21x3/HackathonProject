@@ -17,6 +17,8 @@ public class Goal {
     private String goalName;
     private int goalAmount;
     private int actualAmount;
+    private Long familyId;
+
     @ManyToOne
     private FamilyAccount family;
 

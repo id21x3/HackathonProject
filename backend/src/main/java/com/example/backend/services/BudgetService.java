@@ -21,13 +21,13 @@ public class BudgetService {
     private TransactionRepository transactionRepository;
 
     public List<Transaction> getTransactionsByType(Long familyId, Long budgetId, String transactionType) {
-        return transactionRepository.findByFamily_IdAndBudget_IdAndTransactionType(
+        return transactionRepository.findByFamilyIdAndBudgetIdAndTransactionType(
                 familyId, budgetId, transactionType);
     }
 
     // Get all transactions for a specific budget
     public List<Transaction> getBudgetTransactions(Long budgetId) {
-        return transactionRepository.findByBudget_Id(budgetId);
+        return transactionRepository.findByBudgetId(budgetId);
     }
 
     // Get transactions summary by category
