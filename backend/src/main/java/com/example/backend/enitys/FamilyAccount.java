@@ -1,9 +1,6 @@
 package com.example.backend.enitys;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +12,7 @@ import java.util.List;
 @Entity
 public class FamilyAccount {
     @Id
-    @Generated
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Или GenerationType.AUTO, если хотите, чтобы Hibernate сам выбрал стратегию
     private int familyId;
     private String familyName;
     @OneToMany
