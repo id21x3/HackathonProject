@@ -120,6 +120,7 @@ body, html {
 }
 
 .add-goal-button {
+    margin-bottom: 10px;
     width: 100%;
     padding: 10px;
     background-color: #3f51b5;
@@ -200,7 +201,7 @@ body, html {
 .member-card.expanded {
     flex-direction: column; /* Меняем расположение на вертикальное */
     align-items: center; /* Центрируем элементы по горизонтали */
-    max-height: 50vh; /* Увеличенная высота карточки */
+    max-height: 100vh; /* Увеличенная высота карточки */
     padding: 20px;
 }
 
@@ -232,7 +233,6 @@ body, html {
     color: #666;
 }
 
-/* Центрирование дополнительной информации */
 .additional-info {
     text-align: center;
     margin-top: 15px;
@@ -247,16 +247,16 @@ body, html {
 /* Кнопка Add Money */
 .add-money-button {
     display: block;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
     padding: 10px 20px;
-    border-radius: 5px;
     margin-top: 10px;
     cursor: pointer;
     width: 100%;
     text-align: center;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 20px;
 }
 /* Стили для модального окна */
 .modal-overlay {
@@ -310,4 +310,140 @@ body, html {
 .close-button {
     background-color: #f44336;
     color: white;
+}
+.additional-info-section {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.additional-info-section h4 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.additional-info-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.additional-info-section li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.category-button {
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    background-color: #3f51b5;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.category-button:hover {
+    background-color: #357abd;
+}
+.category-button.restricted {
+    background-color: #f44336; /* Красный цвет для запрещенных категорий */
+    color: white;
+}
+button:focus, .category-button:focus {
+    outline: none;
+}
+
+.category-button:hover {
+    background-color: #357abd;
+}
+
+.category-button.restricted {
+    background-color: #f44336; /* Красный цвет для запрещенных категорий */
+    color: white;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Уменьшите прозрачность или уберите */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.amount {
+    font-weight: bold;
+}
+
+.expense {
+    color: #f44336; /* Красный цвет для расходов */
+}
+
+.income {
+    color: #4caf50; /* Зеленый цвет для пополнений */
+}
+
+.additional-info-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.additional-info-section li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f7ff;
+    border-bottom: 1px solid #ddd;
+}
+
+.icons-container {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.icon-button:hover {
+    color: #4a90e2; /* Цвет при наведении */
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
 }

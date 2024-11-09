@@ -1,0 +1,40 @@
+.bank-card {
+    width: 280px;
+    height: 160px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #4a90e2, #003366);
+    color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+.card-chip {
+    width: 40px;
+    height: 30px;
+    background-color: #e6c200;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card-number {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}

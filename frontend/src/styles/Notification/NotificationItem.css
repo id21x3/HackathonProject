@@ -1,0 +1,32 @@
+.notification-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.notification-item.unread {
+    background-color: #e0f7fa; /* Цвет для непрочитанных уведомлений */
+    color: #333;
+}
+
+.notification-item.read {
+    background-color: #f0f0f0; /* Цвет для прочитанных уведомлений */
+    color: #666;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.envelope-icon {
+    color: #4a90e2;
+}
