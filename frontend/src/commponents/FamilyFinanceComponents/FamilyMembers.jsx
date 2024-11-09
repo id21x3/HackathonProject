@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import AdditionalInfo from './AdditionalInfo';
+import BankCard from './BankCard';
 
 const FamilyMembers = () => {
     const [expandedMember, setExpandedMember] = useState(null);
@@ -14,7 +16,8 @@ const FamilyMembers = () => {
             color: '#4caf50',
             role: 'Parent',
             phone: '123-456-7890',
-            card: '**** **** **** 1234',
+            cardNumber: '**** **** **** 1234',
+            expiryDate: '12/24',
             address: '123 Main St, Springfield'
         },
         {
@@ -24,7 +27,8 @@ const FamilyMembers = () => {
             color: '#ff5722',
             role: 'Child',
             phone: '234-567-8901',
-            card: '**** **** **** 2345',
+            cardNumber: '**** **** **** 2345',
+            expiryDate: '08/25',
             address: '123 Main St, Springfield'
         },
         {
@@ -34,10 +38,28 @@ const FamilyMembers = () => {
             color: '#ff9800',
             role: 'Child',
             phone: '345-678-9012',
-            card: '**** **** **** 3456',
+            cardNumber: '**** **** **** 3456',
+            expiryDate: '05/23',
             address: '123 Main St, Springfield'
         },
     ]);
+
+    const recentExpenses = [
+        { item: 'Groceries', amount: -50, type: 'expense' },
+        { item: 'Fuel', amount: -30, type: 'expense' },
+        { item: 'Restaurant', amount: -25, type: 'expense' },
+        { item: 'Salary', amount: 500, type: 'income' },
+        { item: 'Gift', amount: 100, type: 'income' }
+    ];
+
+
+    const productCategories = [
+        'Alcoholic Beverages',
+        'Non-Alcoholic Beverages',
+        'Cigarettes',
+        'Groceries',
+        'Household Supplies',
+    ];
 
     const handleMemberClick = (member) => {
         setExpandedMember(expandedMember === member.name ? null : member.name);
@@ -83,24 +105,36 @@ const FamilyMembers = () => {
                     </div>
 
                     {expandedMember === member.name && (
-                        <div className="additional-info">
-                            <p>Phone: {member.phone}</p>
-                            <p>Card: {member.card}</p>
-                            <p>Address: {member.address}</p>
-                            {member.role === 'Child' && (
-                                <button
-                                    className="add-money-button"
-                                    onClick={() => handleAddMoneyClick(member)}
-                                >
-                                    Add Money
-                                </button>
-                            )}
-                        </div>
+                        <>
+                            <BankCard
+                                cardNumber={member.cardNumber}
+                                ownerName={member.name}
+                                expiryDate={member.expiryDate}
+                            />
+                            <div className="additional-info">
+                                <p>Phone: {member.phone}</p>
+                                <p>Address: {member.address}</p>
+                                {member.role === 'Child' && (
+                                    <button
+                                        className="add-money-button"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // Останавливаем всплытие события
+                                            handleAddMoneyClick(member);
+                                        }}
+                                    >
+                                        Add Money
+                                    </button>
+                                )}
+                            </div>
+                            <AdditionalInfo
+                                recentExpenses={recentExpenses}
+                                productCategories={productCategories}
+                            />
+                        </>
                     )}
                 </div>
             ))}
 
-            {/* Модальное окно для ввода суммы */}
             {isModalOpen && (
                 <div className="modal-overlay">
                     <div className="modal-content">
