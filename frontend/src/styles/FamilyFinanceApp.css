@@ -201,7 +201,7 @@ body, html {
 .member-card.expanded {
     flex-direction: column; /* Меняем расположение на вертикальное */
     align-items: center; /* Центрируем элементы по горизонтали */
-    max-height: 100vh; /* Увеличенная высота карточки */
+    max-height: 150vh; /* Увеличенная высота карточки */
     padding: 20px;
 }
 
@@ -446,4 +446,104 @@ h1 {
     font-size: 1.5rem;
     color: #333;
     margin: 0;
+}
+.add-member-button{
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.confirm-button{
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.role-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.role-button {
+    padding: 10px 20px;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+    background-color: white;
+    color: #4a90e2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.role-button.active {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.role-button:hover {
+    background-color: #e0e7ff;
+    color: #4a90e2;
+}
+.transaction-group {
+    margin-bottom: 10px;
+}
+
+.transaction-date {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+.amount.expense {
+    color: #f44336;
+}
+
+.amount.income {
+    color: #4caf50;
+}
+.member-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.member-info h4 {
+    font-size: 1rem;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.member-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 5px;
+}
+
+.member-info p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    margin-left: auto; /* Отталкивает элемент вправо */
 }

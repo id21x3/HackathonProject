@@ -7,6 +7,7 @@ const FamilyMembers = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [transferAmount, setTransferAmount] = useState('');
     const [selectedChild, setSelectedChild] = useState(null);
+    const [isAddMemberModalOpen, setIsAddMemberModalOpen] = useState(false);
 
     const [members, setMembers] = useState([
         {
@@ -44,14 +45,19 @@ const FamilyMembers = () => {
         },
     ]);
 
-    const recentExpenses = [
-        { item: 'Groceries', amount: -50, type: 'expense' },
-        { item: 'Fuel', amount: -30, type: 'expense' },
-        { item: 'Restaurant', amount: -25, type: 'expense' },
-        { item: 'Salary', amount: 500, type: 'income' },
-        { item: 'Gift', amount: 100, type: 'income' }
-    ];
+    const [newMember, setNewMember] = useState({
+        name: '',
+        role: 'Child',
+        cardNumber: '',
+    });
 
+    const recentExpenses = [
+        { item: 'Groceries', amount: -50, type: 'expense', date: '2024-11-05' },
+        { item: 'Fuel', amount: -30, type: 'expense', date: '2024-11-04' },
+        { item: 'Restaurant', amount: -25, type: 'expense', date: '2024-11-03' },
+        { item: 'Salary', amount: 500, type: 'income', date: '2024-11-01' },
+        { item: 'Gift', amount: 100, type: 'income', date: '2024-10-29' }
+    ];
 
     const productCategories = [
         'Alcoholic Beverages',
@@ -87,6 +93,30 @@ const FamilyMembers = () => {
         setSelectedChild(null);
     };
 
+    const handleAddNewMember = () => {
+        if (newMember.name && newMember.cardNumber) {
+            setMembers([
+                ...members,
+                {
+                    name: newMember.name,
+                    amount: 0,
+                    initials: newMember.name
+                        .split(' ')
+                        .map((n) => n[0])
+                        .join(''),
+                    color: '#4caf50',
+                    role: newMember.role,
+                    cardNumber: newMember.cardNumber,
+                    expiryDate: '12/25',
+                    address: 'Unknown Address',
+                    phone: 'Unknown Phone',
+                },
+            ]);
+            setNewMember({ name: '', role: 'Child', cardNumber: '' });
+            setIsAddMemberModalOpen(false);
+        }
+    };
+
     return (
         <section className="family-members">
             <h3>Family Members</h3>
@@ -118,7 +148,7 @@ const FamilyMembers = () => {
                                     <button
                                         className="add-money-button"
                                         onClick={(e) => {
-                                            e.stopPropagation(); // Останавливаем всплытие события
+                                            e.stopPropagation();
                                             handleAddMoneyClick(member);
                                         }}
                                     >
@@ -134,6 +164,9 @@ const FamilyMembers = () => {
                     )}
                 </div>
             ))}
+            <button className="add-member-button" onClick={() => setIsAddMemberModalOpen(true)}>
+                Add New Member
+            </button>
 
             {isModalOpen && (
                 <div className="modal-overlay">
@@ -150,6 +183,43 @@ const FamilyMembers = () => {
                         </button>
                         <button className="close-button" onClick={() => setIsModalOpen(false)}>
                             Cancel
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {isAddMemberModalOpen && (
+                <div className="modal-overlay" onClick={() => setIsAddMemberModalOpen(false)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <h4>Add New Family Member</h4>
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            value={newMember.name}
+                            onChange={(e) => setNewMember({ ...newMember, name: e.target.value })}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Card Number"
+                            value={newMember.cardNumber}
+                            onChange={(e) => setNewMember({ ...newMember, cardNumber: e.target.value })}
+                        />
+                        <div className="role-buttons">
+                            <button
+                                className={`role-button ${newMember.role === 'Parent' ? 'active' : ''}`}
+                                onClick={() => setNewMember({ ...newMember, role: 'Parent' })}
+                            >
+                                Parent
+                            </button>
+                            <button
+                                className={`role-button ${newMember.role === 'Child' ? 'active' : ''}`}
+                                onClick={() => setNewMember({ ...newMember, role: 'Child' })}
+                            >
+                                Child
+                            </button>
+                        </div>
+                        <button className="confirm-button" onClick={handleAddNewMember}>
+                            Add Member
                         </button>
                     </div>
                 </div>

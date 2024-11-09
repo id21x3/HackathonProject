@@ -12,20 +12,34 @@ const AdditionalInfo = ({ recentExpenses, productCategories }) => {
         );
     };
 
+    // Группируем транзакции по дате
+    const groupedTransactions = recentExpenses.reduce((acc, transaction) => {
+        if (!acc[transaction.date]) {
+            acc[transaction.date] = [];
+        }
+        acc[transaction.date].push(transaction);
+        return acc;
+    }, {});
+
     return (
         <div className="additional-info-section">
             <div className="recent-expenses">
                 <h4>Recent Transactions</h4>
-                <ul>
-                    {recentExpenses.map((transaction, index) => (
-                        <li key={index}>
-                            {transaction.item} -
-                            <span className={`amount ${transaction.amount < 0 ? 'expense' : 'income'}`}>
-                                ${Math.abs(transaction.amount)}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
+                {Object.keys(groupedTransactions).map((date, index) => (
+                    <div key={index} className="transaction-group">
+                        <h5 className="transaction-date">{date}</h5>
+                        <ul>
+                            {groupedTransactions[date].map((transaction, idx) => (
+                                <li key={idx}>
+                                    {transaction.item} -
+                                    <span className={`amount ${transaction.amount < 0 ? 'expense' : 'income'}`}>
+                                        ${Math.abs(transaction.amount)}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
 
             <div className="product-categories">
