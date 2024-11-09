@@ -2,7 +2,7 @@ services:
 
   app:
     build:
-      context: ./backend
+      context: .
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
@@ -35,9 +35,18 @@ services:
   frontend:
     build:
       context: ./frontend           # Указание на директорию с фронтендом
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.frontend
     ports:
       - "3000:80"
+    networks:
+      - spring-boot-network
+
+  fastapi:
+    build:
+      context: ./ai_microservice
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
     networks:
       - spring-boot-network
 
