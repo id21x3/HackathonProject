@@ -10,13 +10,31 @@ client = OpenAI()
 app = FastAPI()
 
 
+class AccountInfo(BaseModel):
+    username: str
+    current_budget: float
+    planned_budget: float
+    spent_on: dict
+
 class UserMessage(BaseModel):
     message: str
+    accountInfo: AccountInfo
 
 def system_prompts(filename="system_prompts.txt"):
     with open(filename, "r", encoding="utf-8") as file:
         prompts = file.read().splitlines()
     return prompts
+
+def account_prompts(accountInfo: AccountInfo):
+    return {"\nYou're communicating with " + accountInfo.username + "." 
+            "\nCurrent expenditures of the family for the month - " + accountInfo.current_budget + "€." +
+            "\nPlanned family budget for the month - " + accountInfo.planned_budget + "€." +
+            "\nDuring the current month the money was spent on: " + money_spent_on(accountInfo.spent_on) + "."
+            }
+
+def money_spent_on(spent_on: dict):
+    return ", ".join([f"{category} - {amount}" for category, amount in spent_on.items()]);
+
 
 @app.post("/get-response")
 async def get_response(user_message: UserMessage):
@@ -28,7 +46,7 @@ async def get_response(user_message: UserMessage):
         completion = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "".join(prompts)},
+                {"role": "system", "content": "".join(prompts) + account_prompts(user_message.accountInfo)},
                 {"role": "user", "content": message}
             ]
         )
