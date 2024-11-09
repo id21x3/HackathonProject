@@ -2,7 +2,7 @@ services:
 
   app:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
@@ -33,13 +33,13 @@ services:
       - spring-boot-network
 
   frontend:
-    build:
-      context: ./frontend           # Указание на директорию с фронтендом
-      dockerfile: Dockerfile.frontend
-    ports:
-      - "3000:80"
-    networks:
-      - spring-boot-network
+   build:
+     context: ./frontend           # Указание на директорию с фронтендом
+     dockerfile: Dockerfile
+   ports:
+     - "3000:80"
+   networks:
+     - spring-boot-network
 
   fastapi:
     build:

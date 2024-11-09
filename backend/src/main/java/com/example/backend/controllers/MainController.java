@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/main")
 public class MainController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public MainController(UserService userService) {
+        this.userService = userService;
+    }
 
     // Главная страница (главный экран приложения)
     @GetMapping("/home")
