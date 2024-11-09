@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  # Сервис для бэкенда
+
   app:
     build:
-      context: .
-      dockerfile: Dockerfile.backend  # Используем новый файл для бэкенда
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     environment:
@@ -13,11 +13,11 @@ services:
       SPRING_DATASOURCE_USERNAME: 'myuser'
       SPRING_DATASOURCE_PASSWORD: 'secret'
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     networks:
       - spring-boot-network
 
-  # Сервис для базы данных PostgreSQL
   postgres:
     image: 'postgres:latest'
     environment:
@@ -33,12 +33,11 @@ services:
       retries: 5
     networks:
       - spring-boot-network
-
   # Сервис для фронтенда React
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile.frontend  # Используем новый Dockerfile для фронтенда
+      context: ./frontend         # Указываем правильный путь к директории с фронтендом
+      dockerfile: Dockerfile
     ports:
       - "3000:80"  # Nginx будет работать на порту 80 внутри контейнера, но мы будем доступаться к фронтенду через порт 3000
     networks:
