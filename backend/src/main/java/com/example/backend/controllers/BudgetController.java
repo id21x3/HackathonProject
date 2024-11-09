@@ -10,9 +10,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/budget")
+@CrossOrigin(origins = "http://localhost:3000")
 public class BudgetController {
     @Autowired
     private BudgetService budgetService;
+
+    @GetMapping("/{budgetId}/overview")
+    public ResponseEntity<BudgetService.BudgetOverviewDTO> getBudgetOverview(@PathVariable Long budgetId) {
+        return ResponseEntity.ok(budgetService.getBudgetOverview(budgetId));
+    }
 
     @GetMapping("/{budgetId}/transactions")
     public ResponseEntity<List<Transaction>> getBudgetTransactions(
@@ -24,11 +30,4 @@ public class BudgetController {
         }
         return ResponseEntity.ok(budgetService.getBudgetTransactions(budgetId));
     }
-
-//    @GetMapping("/{budgetId}/transactions/summary")
-//    public ResponseEntity<Map<Category, BigDecimal>> getTransactionsSummary(
-//            @PathVariable Long budgetId) {
-//        return ResponseEntity.ok(
-//                budgetService.getTransactionsSummaryByCategory(budgetId));
-//    }
 }

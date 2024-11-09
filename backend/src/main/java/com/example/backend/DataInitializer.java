@@ -14,8 +14,8 @@ public class DataInitializer implements CommandLineRunner {
     @Autowired
     private FamilyAccountRepository familyAccountRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserRepository userRepository;
 
     @Autowired
     private BudgetRepository budgetRepository;
@@ -51,26 +51,26 @@ public class DataInitializer implements CommandLineRunner {
         familyAccount.setBudget(budget);
         familyAccountRepository.save(familyAccount);
 
-        // Создание пользователей
-        User father = new User("John", "Smith");
-        father.setFamily(familyAccount);
-        father.setIsParent(true);
-        userRepository.save(father);
-
-        User mother = new User("Jane", "Smith");
-        mother.setFamily(familyAccount);
-        mother.setIsParent(true);
-        userRepository.save(mother);
-
-        User daughter = new User("Emily", "Smith");
-        daughter.setFamily(familyAccount);
-        daughter.setIsParent(false);
-        userRepository.save(daughter);
-
-        User son = new User("Jack", "Smith");
-        son.setFamily(familyAccount);
-        son.setIsParent(false);
-        userRepository.save(son);
+//        // Создание пользователей
+//        User father = new User("John", "Smith");
+//        father.setFamily(familyAccount);
+//        father.setIsParent(true);
+//        userRepository.save(father);
+//
+//        User mother = new User("Jane", "Smith");
+//        mother.setFamily(familyAccount);
+//        mother.setIsParent(true);
+//        userRepository.save(mother);
+//
+//        User daughter = new User("Emily", "Smith");
+//        daughter.setFamily(familyAccount);
+//        daughter.setIsParent(false);
+//        userRepository.save(daughter);
+//
+//        User son = new User("Jack", "Smith");
+//        son.setFamily(familyAccount);
+//        son.setIsParent(false);
+////        userRepository.save(son);
 
         // Создание цели для семьи
         Goal goalVacation = new Goal("Vacation", 2000);
@@ -88,7 +88,7 @@ public class DataInitializer implements CommandLineRunner {
         transaction1.setDescription("Grocery Shopping");
         transaction1.setFamily(familyAccount);
         transaction1.setCategory(categoryFood);
-        transaction1.setUser(father);
+//        transaction1.setUser(father);
         transactionRepository.save(transaction1);
 
         Transaction transaction2 = new Transaction();
@@ -97,7 +97,7 @@ public class DataInitializer implements CommandLineRunner {
         transaction2.setDescription("Movie Night");
         transaction2.setFamily(familyAccount);
         transaction2.setCategory(categoryEntertainment);
-        transaction2.setUser(mother);
+//        transaction2.setUser(mother);
         transactionRepository.save(transaction2);
 
         // Печать сообщений

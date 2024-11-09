@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed2cf16-3de4-4149-bb31-b808b4795d06" name="Changes" comment="Dockerfile fix">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/DataInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/commponents/ChatPageComponents/ChatContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/budgetService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/enitys/FamilyAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/enitys/FamilyAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai_microservice/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ai_microservice/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/controllers/BudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/controllers/BudgetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/services/BudgetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/services/BudgetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/commponents/ChatPageComponents/MessageInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/commponents/ChatPageComponents/MessageInput.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +54,7 @@
     &quot;Docker.backend/compose.yaml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.backend/compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;back__test__branch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/oleksandr/Documents/HackathonProject/backend&quot;,
