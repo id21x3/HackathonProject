@@ -24,7 +24,7 @@ public class FamilyAccount {
     @OneToOne
     private Budget budget;
 
-    private FamilyAccount(String familyName) {
+    public FamilyAccount(String familyName) {
         this.familyName = familyName;
     }
 
